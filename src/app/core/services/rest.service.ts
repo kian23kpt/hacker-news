@@ -16,8 +16,8 @@ export class RestService {
     });
   }
 
-  public getNewStories(): Observable<number[]> {
-    return this._http.get<number[]>(CONSTANTS.BASE_URL + 'newstories.json', {
+  public getTopStories(): Observable<number[]> {
+    return this._http.get<number[]>(CONSTANTS.BASE_URL + 'topstories.json', {
       headers: this.setHeaders(),
     });
   }

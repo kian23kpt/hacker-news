@@ -1,4 +1,21 @@
 :host {
   display: block;
-  margin: 20px;
+  margin: 40px;
+
+  mat-panel-description {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+
+  .link__section {
+    padding-bottom: 10px;
+  }
+
+  .comments__section {
+    h3,
+    span {
+      font-weight: bold;
+    }
+  }
 }

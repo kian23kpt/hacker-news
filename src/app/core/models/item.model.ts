@@ -8,4 +8,5 @@ export interface Item {
   title: string;
   type: string;
   url: string;
+  text: InnerHTML;
 }

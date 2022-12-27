@@ -1,11 +1,26 @@
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let item of stories">
+  <mat-expansion-panel
+    *ngFor="let item of stories"
+    (opened)="getComments(item.kids)"
+  >
     <mat-expansion-panel-header>
       <mat-panel-title> {{ item?.title }} </mat-panel-title>
       <mat-panel-description>
-        This is a summary of the content
+        <span> By: {{ item.by }} </span>
+        <span>
+          Time: {{ item.time * 1000 | date : "YYYY MMM dd - hh:mm a" }}
+        </span>
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>This is the primary content of the panel.</p>
+    <section class="link__section">
+      Link: <a [href]="item.url" target="_blank"> {{ item.url }}</a>
+    </section>
+    <section class="comments__section">
+      <h3>Comments:</h3>
+      <div *ngFor="let comment of comments">
+        <span>{{ comment.by }}:</span>
+        <div [innerHTML]="comment.text"></div>
+      </div>
+    </section>
   </mat-expansion-panel>
 </mat-accordion>
