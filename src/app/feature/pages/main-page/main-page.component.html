@@ -2,6 +2,7 @@
   <mat-expansion-panel
     *ngFor="let item of stories"
     (opened)="getComments(item.kids)"
+    (closed)="ngOnDestroy()"
   >
     <mat-expansion-panel-header>
       <mat-panel-title> {{ item?.title }} </mat-panel-title>
